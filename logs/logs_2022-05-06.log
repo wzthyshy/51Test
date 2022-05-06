@@ -1,0 +1,3 @@
+2022-05-06-23:55|INFO  |base_api.py:140|api模板改变的参数为：{p_data}
+2022-05-06-23:55|INFO  |base_api.py:149|修改后的请求为：{data}
+2022-05-06-23:55|INFO  |base_api.py:151|响应为：{res}

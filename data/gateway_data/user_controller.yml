@@ -1,0 +1,9 @@
+user_login:
+  "method": "post"
+  "url": "http://${ip}/api/authenticate"
+  "headers":
+      "Content-Type": "application/json"
+  "json":
+      "username": ${username}
+      "password": ${password}
+      "rememberMe": "true"
