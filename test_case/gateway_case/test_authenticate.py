@@ -36,4 +36,7 @@ class Testlogin():
         get_log.log.info("msg ==>> 期望结果：{}， 实际结果：【 {} 】".format(msg, res.get('msg')))
         assert res.get('msg') == msg
 
-
+    @allure.story("用例--刷新token")
+    def test_refresh_token(self):
+        res = self.user.refresh_token(self)
+        print(res)

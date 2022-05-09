@@ -57,6 +57,32 @@ class BaseApi:
         time_stamp = int(time.mktime(time_strp))
         return time_stamp
 
+    def get_token(self):
+        """
+        获取access_token，不同的应用的秘钥，会产生不同的access_token，所以就封装起来了
+        :param secret: 企业微信不同也应用的密码
+        :return: access_token的值
+        """
+        json_data={
+            "username": "18858104920",
+            "password": "123456",
+            "rememberMe": "true"
+        }
+        header={
+            "Content-Type": "application/json"
+        }
+        data = {
+            "method": "post",
+            "url": "http://3r5z779982.wicp.vip:7000/api/authenticate",
+            "json": json_data,
+            "headers": header
+        }
+        # 使用send_api，传入data，相当于使用了requests了
+        res = self.send_api(data)
+        # 获取access_token
+        token = res["data"]["token_id"]
+        return token
+
     @classmethod
     def jsonpath(cls, json, expr):
         """

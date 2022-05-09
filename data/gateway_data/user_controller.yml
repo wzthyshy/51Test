@@ -7,3 +7,11 @@ user_login:
       "username": ${username}
       "password": ${password}
       "rememberMe": "true"
+
+refresh_token:
+  "method": "post"
+  "url": "http://${ip}/api/renewal"
+  "headers":
+    "Content-Type": "application/json"
+    "Bear": "$token"
+
