@@ -13,5 +13,6 @@ refresh_token:
   "url": "http://${ip}/api/renewal"
   "headers":
     "Content-Type": "application/json"
-    "Bear": "$token"
+    "Authorization": "$token"
+  "json":
 

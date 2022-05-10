@@ -37,6 +37,7 @@ class Testlogin():
         assert res.get('msg') == msg
 
     @allure.story("用例--刷新token")
-    def test_refresh_token(self):
-        res = self.user.refresh_token(self)
+    @pytest.mark.parametrize("token, code", sign_data["refresh_data"])
+    def test_refresh_token(self, token, code):
+        res = self.user.refresh_token(token)
         print(res)
